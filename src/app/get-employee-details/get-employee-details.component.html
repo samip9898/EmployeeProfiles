@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Employee Details</h2><br>
+        <form class="form-horizontal" [formGroup]="EmployeeForm" (ngSubmit)="postEmployee()">
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Name:</label>
+                <div class="col-sm-10">
+                    <input type="text"  placeholder="Enter Full Name" fromControlName="name">
+                </div>
+                <div *ngIf="fun.name.invalid && (fun.name.dirty || fun.name.touched)">
+                    <div *ngIf="fun.name.errors.required">
+                        Full Name is required.
+                    </div>
+                    <div *ngIf="fun.name.errors.minlength">
+                        Name must be at least 4 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email" placeholder="Enter email" formControlName="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Mobile:</label>
+                <div class="col-sm-10">
+                    <input type="number" placeholder="Enter mobile number" formControlName="mobile">
+                       
+                </div>
+                <div *ngIf="fun.mobile.errors.minlength">
+                    Mobile must be at least 4 characters long.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">city:</label>
+                <div class="col-sm-10">
+                    <input type="text"  placeholder="Enter city" formControlName="city">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Department:</label>
+                <div class="col-sm-10">
+                    <input type="text"  placeholder="Enter Department" formControlName="Department">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="remember"> Remember me</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="POST" [disabled]="EmployeeForm.valid" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

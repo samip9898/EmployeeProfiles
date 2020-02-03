@@ -1,0 +1,28 @@
+{
+  "profiles": [
+    {
+      "name": "Rachit",
+      "email": "rachit.desai@gmail",
+      "mobile": " 948592450",
+      "city": "Valsad",
+      "Department": "ML",
+      "id": 8
+    },
+    {
+      "name": "",
+      "email": "shiv@1245",
+      "mobile": 1234567891,
+      "city": "ballu",
+      "Department": "IOT",
+      "id": 9
+    },
+    {
+      "name": "",
+      "email": "samip@1998",
+      "mobile": 9033373211,
+      "city": "bulsar",
+      "Department": "angular",
+      "id": 10
+    }
+  ]
+}
