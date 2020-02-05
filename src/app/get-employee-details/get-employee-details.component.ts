@@ -9,11 +9,11 @@ import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from
   styleUrls: ['./get-employee-details.component.scss']
 })
 export class GetEmployeeDetailsComponent implements OnInit {
- 
+  
   EmployeeForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     email: new FormControl('', Validators.required),
-    mobile: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    mobile: new FormControl('', [Validators.required, Validators.maxLength(10)]),
     city: new FormControl('', Validators.required),
     Department: new FormControl('', Validators.required),
 
@@ -23,11 +23,12 @@ export class GetEmployeeDetailsComponent implements OnInit {
   get fun() {
     return this.EmployeeForm.controls;
   }
-
+ 
   ngOnInit() {
   }
   postEmployee() {
     var activeButton = document.activeElement.id;
+    
     if (activeButton == "POST") {
       let data = {
         name: this.EmployeeForm.get('name').value,
@@ -39,6 +40,6 @@ export class GetEmployeeDetailsComponent implements OnInit {
       this.httpClient.post('http://localhost:3000/profiles', data).subscribe();
 
     }
+    alert('Employee is Added!');
   }
-
 }

@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GetEmployeeDetailsComponent } from './get-employee-details/get-employee-details.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms'
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { SearchEmployeePipe } from './search-employee.pipe'
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms'
     AppComponent,
     EmployeeDetailsComponent,
     DeleteEmployeeComponent,
-    GetEmployeeDetailsComponent
+    GetEmployeeDetailsComponent,
+    UpdateEmployeeComponent,
+    SearchEmployeePipe
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms'
     FormsModule,
     ReactiveFormsModule
   ],
+  exports:[SearchEmployeePipe],
   providers: [],
   bootstrap: [AppComponent]
 })

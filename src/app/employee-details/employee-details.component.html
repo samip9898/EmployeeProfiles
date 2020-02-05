@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    
-
-
-    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 </head>
 <div class="container">
-    <button [routerLink]="['get-employee-details']">Create<i class="fa fa-plus"></i></button><br><br>
+    <form class="navbar-form" role="search">
+        <button [routerLink]="['/get-employee-details']">Create<i class="fa fa-plus"></i></button>&nbsp;
+        <div class="input-group add-on">
+            <input class="form-control" placeholder="Search" [(ngModel)]="searchEmployee" name="srch-term"
+                id="srch-term" type="text">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
     <table border="1px" class="table">
         <tr class="container">
             <th>Full Name</th>
@@ -24,18 +29,19 @@
             <th>City</th>
             <th>Department</th>
             <th>Operations</th>
-            
         </tr>
-        <tr *ngFor='let profile of profiles' class="container">
+        <tr *ngFor='let profile of profiles | searchEmployee : searchEmployee' class="container">
             <td>{{profile.name}}</td>
             <td>{{profile.email}}</td>
             <td>{{profile.mobile}}</td>
             <td>{{profile.city}}</td>
             <td>{{profile.Department}}</td>
-            <td> <button type="button" class="btn">Edit <i class="fa fa-edit"></i></button><button [routerLink]="['/delete-employee',profile.id]" click = "delete-employee()">Delete<i class='fa fa-trash'></i></button> </td>
-            <td></td>
-            <!-- <td><a [routerLink]="['/delete-book',book.id]" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-remove">Remove</span></a></td>
-         <td><a [routerLink]="['/get-book',book.id]" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-pencil">Edit</span></a></td> -->
+            <td> <button type="button" [routerLink]="['/update-employee',profile.id]">Edit <i
+                        class="fa fa-edit"></i></button>
+                <button [routerLink]="['/delete-employee',profile.id]" >Delete<i class='fa fa-trash'></i></button> </td>
+            
         </tr>
     </table>
 </div>
+
+<!-- [routerLink]="['/delete-employee',profile.id]" -->
