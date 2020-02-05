@@ -29,7 +29,7 @@ EmployeeForms = new FormGroup({
     
     this.httpClient.get(`http://localhost:3000/profiles/${this.employeeId}`).subscribe(data=>{
       console.log(data);
-      debugger
+  
       this.employee=data;
       console.log(this.employee);
       this.EmployeeForms.setValue(

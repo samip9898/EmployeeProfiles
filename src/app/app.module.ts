@@ -9,7 +9,8 @@ import { DeleteEmployeeComponent } from './delete-employee/delete-employee.compo
 import { GetEmployeeDetailsComponent } from './get-employee-details/get-employee-details.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-import { SearchEmployeePipe } from './search-employee.pipe'
+import { SearchEmployeePipe } from './search-employee.pipe';
+import { SortEmployeePipe } from './sort-employee.pipe'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SearchEmployeePipe } from './search-employee.pipe'
     DeleteEmployeeComponent,
     GetEmployeeDetailsComponent,
     UpdateEmployeeComponent,
-    SearchEmployeePipe
+    SearchEmployeePipe,
+    SortEmployeePipe
   ],
   imports: [
     BrowserModule,

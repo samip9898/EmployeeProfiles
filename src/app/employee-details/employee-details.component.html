@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <div class="container">
     <form class="navbar-form" role="search">
@@ -23,14 +24,16 @@
     </form>
     <table border="1px" class="table">
         <tr class="container">
-            <th>Full Name</th>
+            <!-- <th>id   </th> -->
+            <th >Full Name <a (click) = "toggleUp()" ><i class="fa fa-toggle-up"></i></a>&nbsp;&nbsp;&nbsp;<a (click) = "toggleDown()" ><i class="fa fa-toggle-down"></i></a> </th> 
             <th>Email</th>
             <th>Mobile</th>
             <th>City</th>
             <th>Department</th>
             <th>Operations</th>
         </tr>
-        <tr *ngFor='let profile of profiles | searchEmployee : searchEmployee' class="container">
+        <tr *ngFor="let profile of profiles  | searchEmployee : searchEmployee | sortEmployee : 'name' : reverse" class="container">
+            <!-- <td>{{profile.id}}</td> -->
             <td>{{profile.name}}</td>
             <td>{{profile.email}}</td>
             <td>{{profile.mobile}}</td>
