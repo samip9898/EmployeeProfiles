@@ -17,6 +17,7 @@ EmployeeForms = new FormGroup({
   mobile: new FormControl('', [Validators.required, Validators.maxLength(10)]),
   city: new FormControl('', Validators.required),
   Department: new FormControl('', Validators.required),
+  gender: new FormControl('male'),
 
 })
   constructor(private httpClient:HttpClient, private routes:ActivatedRoute, private route:Router) { }
@@ -38,12 +39,15 @@ EmployeeForms = new FormGroup({
           email:this.employee.email,
           mobile:this.employee.mobile,
           city:this.employee.city,
-          Department:this.employee.Department
+          Department:this.employee.Department,
+          gender:this.employee.gender
         }
       )
     })
   }
-
+/**
+ * updating employee details
+ */
   updateEmployee()
   {
     var activeButton = document.activeElement.id;
@@ -54,6 +58,7 @@ EmployeeForms = new FormGroup({
       this.employee.mobile=this.EmployeeForms.get('mobile').value;
       this.employee.city=this.EmployeeForms.get('city').value;
       this.employee.Department=this.EmployeeForms.get('Department').value;
+      this.employee.gender=this.EmployeeForms.get('gender').value;
       console.log(this.EmployeeForms.get)
       this.httpClient.put(`http://localhost:3000/profiles/${this.employeeId}`,this.employee).subscribe();
       alert('Employee is Updated!');

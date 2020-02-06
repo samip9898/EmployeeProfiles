@@ -6,22 +6,25 @@
       "mobile": "9033373211",
       "city": "Valsad",
       "Department": "Angular",
+      "gender": "male",
       "id": 1
     },
     {
       "name": "saumya",
       "email": "saumya@123",
       "mobile": 9032353910,
-      "city": "valsad",
+      "city": "Valsad",
       "Department": "ML",
+      "gender": "male",
       "id": 2
     },
     {
       "name": "astha yadav",
       "email": "astha@123",
       "mobile": 1234567891,
-      "city": "navsari",
-      "Department": "angular",
+      "city": "Navsari",
+      "Department": "Angular",
+      "gender": "male",
       "id": 3
     },
     {
@@ -30,23 +33,35 @@
       "mobile": 9033765431,
       "city": "Valsad",
       "Department": "ML",
+      "gender": "male",
       "id": 4
     },
     {
       "name": "tapas",
       "email": "tapas@123",
       "mobile": 873465321,
-      "city": "valsad",
+      "city": "Valsad",
       "Department": ".NET",
+      "gender": "male",
       "id": 5
     },
     {
-      "name": "zalak",
-      "email": "zalak@9898",
-      "mobile": 921345627,
-      "city": "valsad",
-      "Department": "Android",
+      "name": "zalak patel",
+      "email": "zalak@123",
+      "mobile": 8987654431,
+      "city": "Vapi",
+      "Department": ".NET",
+      "gender": "female",
       "id": 6
+    },
+    {
+      "name": "shiv desai",
+      "email": "shiv@98",
+      "mobile": 8976624652,
+      "city": "Joravasan",
+      "Department": "QA",
+      "gender": "female",
+      "id": 7
     }
   ]
 }

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-delete-employee',
   templateUrl: './delete-employee.component.html',
@@ -14,12 +13,13 @@ export class DeleteEmployeeComponent implements OnInit {
 
   constructor(private httpClient : HttpClient, private routes : ActivatedRoute, private route : Router) { }
 
+/**
+ * deleting an employee
+ */
+
   ngOnInit() {
     this.id=this.routes.snapshot.params['id'];
-    this.httpClient.delete(`http://localhost:3000/profiles/${this.id}`).subscribe();
+    this.httpClient.delete(`http://localhost:3000/profiles/${this.id}`).subscribe() 
+  }
     
-  }
-  goToDetails(){
-    this.route.navigate(['/employee-details']);
-  }
 }
